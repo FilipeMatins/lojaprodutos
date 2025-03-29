@@ -31,17 +31,18 @@
 
 
 
-<body>
+<body class="corpo-visualizar-categoria">
     <?php require_once __DIR__ . '\..\components\navbar.php'; ?>
 
     <?php require_once __DIR__ . '\..\components\sidebar.php'; ?>
 
     
-    <section class="">
+    <section class="visualizar-categoria">
         <!-- Exibe o nome e a descrição da categoria -->
         <h3>Categoria: <?php echo ($nome); ?></h3>
-        <p>Descrição: <br> <?php echo ($descricao); ?></p>
+        <p>Descrição: <?php echo ($descricao); ?></p>
 
+        <div class="botoes-container">
         <form action="categorias.php" method="GET">
             <button title="Voltar">
                 <span class="material-symbols-outlined">
@@ -49,6 +50,19 @@
                 </span>
             </button>
         </form>
+        <!-- Botão de Editar -->
+        <?php if (isset($_GET['id'])): ?>
+            <form action="editar_categoria.php" method="GET">
+                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                <button title="Editar">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                    Editar
+                </button>
+            </form>
+        <?php endif; ?>
+        </div>
     </section>
     
 </body>
