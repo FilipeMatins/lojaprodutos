@@ -16,6 +16,30 @@ body {
     height: 100vh;
 }
 
+.novo-btn-container {
+    position: absolute;
+    top: 110px; 
+    right: 20px; 
+    z-index: 10;
+}
+
+.novo-btn {
+    background-color: #3498db; 
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.novo-btn:hover {
+    background-color: #2980b9; 
+}
+
 header {
     grid-column: span 2; 
     background-color: 	#00008B;

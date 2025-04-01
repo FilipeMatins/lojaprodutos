@@ -16,7 +16,11 @@
     <?php require_once __DIR__ . '\..\components\sidebar.php'; ?>
 
     <main>
+        
         <h1>Categorias</h1>
+        <div class="novo-btn-container">
+            <a href="cadastro.php" class="novo-btn">Novo</a>
+        </div>
 
         <table class="table">
             <thead>

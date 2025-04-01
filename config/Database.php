@@ -15,4 +15,5 @@ class Database {
         $conn = new PDO($url, $this->user, $this->password);
         return $conn;
     }
+    
 }

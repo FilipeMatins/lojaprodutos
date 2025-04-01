@@ -7,12 +7,25 @@ class CategoriaModel {
     private int $id;
 
     public string $nome;
-     private $conn;
-     private $tabela = "categoria";
+     public string $descricao;
+     public int $id;
+     public string $nome;
+    //  private $tabela = "categoria";
     
-     public function __construct(){
-        $db = new Database();
-        $this->conn = $db->conectar();
+    //  public function __construct(){
+    //     $db = new Database();
+    //     $this->conn = $db->conectar();
+    // }
+
+    public function cadastrar(){
+        $db = new Database2("categoria");
+
+        $res = $db->insert([
+            "nome"=>$this->nome,
+            "descricao"=>$this->descricao
+        ]);
+
+        return $res;
     }
 
     public function listar() {
@@ -32,9 +45,5 @@ class CategoriaModel {
         $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 
         return $stmt->fetch();
-    }
-
-    public function cadastrar(){
-        
     }
 }
