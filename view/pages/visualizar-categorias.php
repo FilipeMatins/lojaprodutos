@@ -52,7 +52,7 @@
         </form>
         <!-- Botão de Editar -->
         <?php if (isset($_GET['id'])): ?>
-            <form action="editar_categoria.php" method="GET">
+            <form action="cadastro-categorias.php" method="GET">
                 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
                 <button title="Editar">
                     <span class="material-symbols-outlined">

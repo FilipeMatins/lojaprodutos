@@ -19,7 +19,11 @@
         
         <h1>Categorias</h1>
         <div class="novo-btn-container">
-            <a href="cadastro.php" class="novo-btn">Novo</a>
+            <form action="cadastro-categorias.php" method="GET">
+                <button class="novo-btn" title="Novo Cadastro">
+                    Novo
+                </button>
+            </form>
         </div>
 
         <table class="table">
@@ -46,7 +50,7 @@
                                 </button>
                             </form>
 
-                            <form action="cadastro.php" method="GET">
+                            <form action="cadastro-categorias.php" method="GET">
                                 <input type="hidden" 
                                     name="id" 
                                     value="<?php echo $cat['id']; ?>">
@@ -57,7 +61,7 @@
                                 </button>
                             </form>
 
-                            <form action="deletar.php" method="POST">
+                            <form action="deletar-categorias.php" method="POST">
                                 <input type="hidden" 
                                     name="id" 
                                     value="<?php echo $cat['id']; ?>">

@@ -2,7 +2,7 @@
 
 @import url(table.css);
 @import url(visualizar-categorias.css);
-
+@import url(cadastro-editar-categorias.css);
 * {
     margin: 0;
     padding: 0;
