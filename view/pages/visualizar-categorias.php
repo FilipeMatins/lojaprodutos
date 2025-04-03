@@ -50,18 +50,6 @@
                 </span>
             </button>
         </form>
-        <!-- Botão de Editar -->
-        <?php if (isset($_GET['id'])): ?>
-            <form action="cadastro-categorias.php" method="GET">
-                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-                <button title="Editar">
-                    <span class="material-symbols-outlined">
-                        edit
-                    </span>
-                    Editar
-                </button>
-            </form>
-        <?php endif; ?>
         </div>
     </section>
     

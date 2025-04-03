@@ -91,5 +91,52 @@ footer {
     padding: 15px;
 }
 
+.container-cadastro-editar{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    background-color: #778899;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.formulario {
+    margin-bottom: 15px;
+}
+
+.container-cadastro-editar label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container-cadastro-editar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.container-cadastro-editar button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.container-cadastro-editar button:hover {
+    background-color: #51a5dd;
+}
 
 
