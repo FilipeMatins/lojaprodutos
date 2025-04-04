@@ -2,17 +2,34 @@
 
 require_once __DIR__ . "/../config/Database.php";
 
+class CategoriaModel {
+
+    public $id;
+
+    public string $nome;
+    public string $descricao;
+     private $conn;
+     private $tabela2 = "categoria";
+    
+     public function __construct(){
+        $db = new Database();
+        $this->conn = $db->conectar();
+    }
+}
+
 class ProdutoModel {
 
     public $id;
 
     public string $nome;
     public string $descricao;
-
+    public $categoria_nome;
     public $id_categoria;
     public $preco;
      private $conn;
      private $tabela = "produtos";
+
+     private $tabela2 = "categoria";
     
      public function __construct(){
         $db = new Database();
@@ -20,7 +37,7 @@ class ProdutoModel {
     }
 
     public function listar() {
-        $query = "SELECT * FROM $this->tabela";
+        $query = "SELECT p.id, p.nome, p.descricao, c.nome as categoria_nome, p.preco FROM $this->tabela as p INNER JOIN $this->tabela2 as c on c.id = p.id_categoria";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
@@ -28,7 +45,7 @@ class ProdutoModel {
     }
 
     public function buscarPorId($id) {
-        $query = "SELECT * FROM $this->tabela where id = :id";
+        $query = "SELECT p.id, p.nome, p.descricao, c.nome as categoria_nome, p.preco FROM $this->tabela as p INNER JOIN $this->tabela2 as c on c.id = p.id_categoria where p.id = :id";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
